@@ -1,3 +1,9 @@
 module.exports = {
-  reactStrictMode: true,
-}
+  images: {
+    domains: [
+      "assets-a1.kompasiana.com",
+      "www.freepnglogos.com",
+      "lh3.googleusercontent.com",
+    ],
+  },
+};
