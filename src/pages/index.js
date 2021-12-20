@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic";
-const Home = dynamic(() => import("../components/Home/Home"));
+const Home = dynamic(() => import("components/Home/Home"));
 import { getSession } from "next-auth/client";
 
 const index = () => {

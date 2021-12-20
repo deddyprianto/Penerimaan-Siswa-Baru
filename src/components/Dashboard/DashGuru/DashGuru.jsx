@@ -1,17 +1,16 @@
 import React from "react";
-import { useDispatch } from "react-redux";
 import LabelTitle from "components/TemplateAdmin/LabelTitle";
 import Card from "components/TemplateAdmin/Card";
 import TableGuru from "components/TemplateAdmin/TableGuru";
 
-const Dashboard = () => {
+const DashGuru = () => {
   return (
     <React.Fragment>
-      <LabelTitle judul="Home" />
+      <LabelTitle judul="Guru" />
       <Card />
       <TableGuru />
     </React.Fragment>
   );
 };
 
-export default Dashboard;
+export default DashGuru;

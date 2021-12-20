@@ -9,7 +9,7 @@ import LayoutDashboard from "../components/Layout/LayoutDashboard";
 let persistor = persistStore(store);
 
 function MyApp({ Component, pageProps }) {
-  console.log("render _app");
+  console.log("RENDER ULANG FILE _APP");
   return (
     <Provider store={store}>
       <PersistGate persistor={persistor}>

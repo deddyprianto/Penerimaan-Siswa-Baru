@@ -1,8 +1,11 @@
 import { getSession } from "next-auth/client";
+import dynamic from "next/dynamic";
 
-const index = ({ session }) => {
-  return <div>This Is Page Teacher</div>;
-};
+const DashGuru = dynamic(() =>
+  import("components/Dashboard/DashGuru/DashGuru")
+);
+
+const index = ({ session }) => <DashGuru />;
 
 export default index;
 

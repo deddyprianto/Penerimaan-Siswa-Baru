@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
+import db from "../../firebaseConf";
+import { collection, addDoc } from "firebase/firestore";
 
 const Input = () => {
+  console.log("RENDER");
   const [nama, setNama] = useState("Nama Lengkap");
   const [usia, setUsia] = useState("Usia");
   const [tanggalLahir, setTanggalLahir] = useState("Tanggal Lahir");
@@ -47,15 +50,50 @@ const Input = () => {
       fnInputan: setPekerjaanAyah,
     },
   ];
-  const btnFN = (e) => {
-    e.preventDefault();
-    Swal.fire({
-      title: "Berhasil!",
-      text: "Data Berhasil Dikirim",
-      icon: "success",
-      confirmButtonText: "Lanjutkan",
-    });
+  const btnFN = async (e) => {
+    // e.preventDefault();
+    // try {
+    //   const docRef = await addDoc(collection(db, "datasiswa"), {
+    //     nama,
+    //     usia,
+    //     tanggalLahir,
+    //     agama,
+    //     alamat,
+    //     namaAyah,
+    //     namaIbu,
+    //     alamatOrangTua,
+    //     pekerjaanAyah,
+    //   });
+    //   if (docRef.id) {
+    //     Swal.fire({
+    //       title: "Berhasil!",
+    //       text: "Data Berhasil Dikirim",
+    //       icon: "success",
+    //       confirmButtonText: "Lanjutkan",
+    //     });
+    //     setNama("");
+    //     setUsia("");
+    //     setTanggalLahir("");
+    //     setAgama("");
+    //     setAlamat("");
+    //     setNamaAyah("");
+    //     setNamaIbu("");
+    //     setAlamatOrangTua("");
+    //     setPekerjaanAyah("");
+    //   }
+    // } catch (error) {
+    //   Swal.fire({
+    //     title: "Gagal!",
+    //     text: "Data Gagal Dikirim",
+    //     icon: "error",
+    //     confirmButtonText: "Batalkan",
+    //   });
+    // }
+    const data = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+    const dataFinal = await data.json();
+    return dataFinal;
   };
+
   return (
     <div className="w-full grid grid-cols-1 grid-rows-3 md:grid-cols-4 md:grid-rows-1">
       {/* col pertama Dta diri anak */}
@@ -63,7 +101,9 @@ const Input = () => {
         <h3 className="text-center text-gray-400 font-bold mt-5 text-2xl">
           Input Data Siswa Baru
         </h3>
-        <div className="flex flex-col items-center bg-white shadow-lg rounded-lg w-4/5 lg:w-8/12">
+
+        <h1></h1>
+        <div className="flex flex-col items-center bg-white shadow-lg rounded-lg w-4/5 lg:w-11/12">
           {dataInputan.map((data, key) => (
             <input
               className="w-4/5 bg-gray-100 m-2 rounded-lg h-10 outline-none text-center"
@@ -80,7 +120,7 @@ const Input = () => {
         <h3 className="text-center text-gray-400 font-bold mt-5 text-2xl">
           Input Data Orang tua siswa
         </h3>
-        <div className="flex flex-col items-center bg-white shadow-lg rounded-lg w-4/5 lg:w-8/12">
+        <div className="flex flex-col items-center bg-white shadow-lg rounded-lg w-4/5 lg:w-11/12">
           {dataInputan2.map((data, key) => (
             <input
               className="w-4/5 bg-gray-100 m-2 rounded-lg h-10 outline-none text-center"

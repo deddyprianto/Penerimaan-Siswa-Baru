@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Input from "../Pendaftaran/Input";
 import Shimmer from "react-shimmer-effect";
+
 const Pendaftaran = () => {
   const [shimmer, setShimmer] = useState(true);
   useEffect(() => {
@@ -28,21 +29,21 @@ const Pendaftaran = () => {
             {/* Shimmer Kotak 1*/}
             <div className="bg-gray-50 w-4/5 h-4/5 rounded flex flex-col justify-evenly items-center mb-2 lg:mb-0 lg:mr-2">
               <Shimmer>
-                <div className="w-4/5 h-6 rounded-2xl lg:w-5/6" />
-                <div className="w-4/5 h-6 rounded-2xl lg:w-5/6" />
-                <div className="w-4/5 h-6 rounded-2xl lg:w-5/6" />
-                <div className="w-4/5 h-6 rounded-2xl lg:w-5/6" />
-                <div className="w-4/5 h-6 rounded-2xl lg:w-5/6" />
+                <div className="w-4/5 h-10 rounded-lg lg:w-5/6" />
+                <div className="w-4/5 h-10 rounded-lg lg:w-5/6" />
+                <div className="w-4/5 h-10 rounded-lg lg:w-5/6" />
+                <div className="w-4/5 h-10 rounded-lg lg:w-5/6" />
+                <div className="w-4/5 h-10 rounded-lg lg:w-5/6" />
               </Shimmer>
             </div>
             {/* END Shimmer Kotak 1 */}
             {/* Shimmer Kotak 2 */}
             <div className="bg-gray-50 w-4/5 h-4/5 rounded flex flex-col justify-evenly items-center ">
               <Shimmer>
-                <div className="w-4/5 h-6 rounded-2xl lg:w-5/6" />
-                <div className="w-4/5 h-6 rounded-2xl lg:w-5/6" />
-                <div className="w-4/5 h-6 rounded-2xl lg:w-5/6" />
-                <div className="w-4/5 h-6 rounded-2xl lg:w-5/6" />
+                <div className="w-4/5 h-10 rounded-lg lg:w-5/6" />
+                <div className="w-4/5 h-10 rounded-lg lg:w-5/6" />
+                <div className="w-4/5 h-10 rounded-lg lg:w-5/6" />
+                <div className="w-4/5 h-10 rounded-lg lg:w-5/6" />
                 <div className="w-4/5 h-6 rounded-2xl lg:w-5/6" />
               </Shimmer>
             </div>

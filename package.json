@@ -5,11 +5,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "coba": "jest"
   },
   "dependencies": {
     "@heroicons/react": "^1.0.5",
     "@reduxjs/toolkit": "^1.6.2",
+    "axios": "^0.24.0",
     "firebase": "^9.5.0",
     "next": "12.0.4",
     "next-auth": "3.24.1",
@@ -24,10 +26,14 @@
     "vanilla-tilt": "^1.7.2"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
     "autoprefixer": "^10.4.0",
     "eslint": "7",
     "eslint-config-next": "12.0.4",
+    "jest": "^27.4.5",
     "postcss": "^8.4.1",
+    "react-test-renderer": "^17.0.2",
     "tailwindcss": "^2.2.19"
   }
 }

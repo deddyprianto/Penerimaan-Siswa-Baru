@@ -31,7 +31,7 @@ const LayoutDashboard = ({ children, dataUser }) => {
     {
       list: "Siswa Baru",
       icons: <ClipboardListIcon className="w-10 h-w-10 text-gray-300" />,
-      to: "/siswabaru",
+      to: "/admin/siswa",
     },
     {
       list: "Berkas Lain",
@@ -41,9 +41,9 @@ const LayoutDashboard = ({ children, dataUser }) => {
   ];
 
   return (
-    <div className="w-full grid grid-cols-14 h-screen bg-gray-50">
+    <div className="w-full grid grid-cols-14 h-screen bg-gray-100">
       {/* SIDEBAR */}
-      <div className="w-full bg-blue-700 h-full flex flex-col items-center justify-center">
+      <div className="w-full bg-blue-500 h-full flex flex-col items-center justify-center rounded-r-full">
         <div className="flex justify-center items-center">
           <Image
             src={dataUser?.user.image}
@@ -59,7 +59,7 @@ const LayoutDashboard = ({ children, dataUser }) => {
             <Link key={key} href={list.to}>
               <div className="flex justify-center items-center cursor-pointer">
                 {list.icons}
-                <p className="text-gray-300 text-lg font-semibold">
+                <p className="text-gray-300 text-sm font-semibold">
                   {list.list}
                 </p>
               </div>
@@ -71,12 +71,14 @@ const LayoutDashboard = ({ children, dataUser }) => {
           onClick={() => signOut({ callbackUrl: "http://localhost:3000/" })}
         >
           <LogoutIcon className="h-10 w-10 text-gray-300" />
-          <p className="text-gray-300">LogOut</p>
+          <p className="text-gray-300 text-sm">LogOut</p>
         </div>
       </div>
       {/* end SIDEBAR */}
       {/* main content */}
-      <div>{children}</div>
+      <div className="overflow-y-scroll w-full h-screen bg-gray-100">
+        {children}
+      </div>
     </div>
   );
 };
