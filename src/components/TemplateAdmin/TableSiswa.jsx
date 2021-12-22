@@ -4,6 +4,7 @@ import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
 import db from "firebaseConf";
 import { useRouter } from "next/router";
 import Swal from "sweetalert2";
+import { DocumentIcon } from "@heroicons/react/solid";
 
 const TableSiswa = () => {
   const router = useRouter();

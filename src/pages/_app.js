@@ -10,6 +10,8 @@ let persistor = persistStore(store);
 
 function MyApp({ Component, pageProps }) {
   console.log("RENDER ULANG FILE _APP");
+  // NAMA EKSTENSION GOOGLE CHROME GRIDMAN -CSS GRID INSPECTOR
+
   return (
     <Provider store={store}>
       <PersistGate persistor={persistor}>

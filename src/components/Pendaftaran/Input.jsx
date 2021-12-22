@@ -51,47 +51,44 @@ const Input = () => {
     },
   ];
   const btnFN = async (e) => {
-    // e.preventDefault();
-    // try {
-    //   const docRef = await addDoc(collection(db, "datasiswa"), {
-    //     nama,
-    //     usia,
-    //     tanggalLahir,
-    //     agama,
-    //     alamat,
-    //     namaAyah,
-    //     namaIbu,
-    //     alamatOrangTua,
-    //     pekerjaanAyah,
-    //   });
-    //   if (docRef.id) {
-    //     Swal.fire({
-    //       title: "Berhasil!",
-    //       text: "Data Berhasil Dikirim",
-    //       icon: "success",
-    //       confirmButtonText: "Lanjutkan",
-    //     });
-    //     setNama("");
-    //     setUsia("");
-    //     setTanggalLahir("");
-    //     setAgama("");
-    //     setAlamat("");
-    //     setNamaAyah("");
-    //     setNamaIbu("");
-    //     setAlamatOrangTua("");
-    //     setPekerjaanAyah("");
-    //   }
-    // } catch (error) {
-    //   Swal.fire({
-    //     title: "Gagal!",
-    //     text: "Data Gagal Dikirim",
-    //     icon: "error",
-    //     confirmButtonText: "Batalkan",
-    //   });
-    // }
-    const data = await fetch("https://jsonplaceholder.typicode.com/todos/1");
-    const dataFinal = await data.json();
-    return dataFinal;
+    e.preventDefault();
+    try {
+      const docRef = await addDoc(collection(db, "datasiswa"), {
+        nama,
+        usia,
+        tanggalLahir,
+        agama,
+        alamat,
+        namaAyah,
+        namaIbu,
+        alamatOrangTua,
+        pekerjaanAyah,
+      });
+      if (docRef.id) {
+        Swal.fire({
+          title: "Berhasil!",
+          text: "Data Berhasil Dikirim",
+          icon: "success",
+          confirmButtonText: "Lanjutkan",
+        });
+        setNama("");
+        setUsia("");
+        setTanggalLahir("");
+        setAgama("");
+        setAlamat("");
+        setNamaAyah("");
+        setNamaIbu("");
+        setAlamatOrangTua("");
+        setPekerjaanAyah("");
+      }
+    } catch (error) {
+      Swal.fire({
+        title: "Gagal!",
+        text: "Data Gagal Dikirim",
+        icon: "error",
+        confirmButtonText: "Batalkan",
+      });
+    }
   };
 
   return (

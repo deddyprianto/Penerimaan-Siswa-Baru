@@ -15,6 +15,7 @@ const Layout = ({ children }) => {
     { list: "Profile", link: "/profile" },
     { list: "Hubungi Kami", link: "/contact" },
   ];
+  // this is a linked
   return (
     <div className="h-screen grid grid-rows-8">
       {show && (

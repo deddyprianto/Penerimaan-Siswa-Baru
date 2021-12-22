@@ -6,9 +6,11 @@ import Link from "next/link";
 import { signOut } from "next-auth/client";
 
 const Navbar = () => {
+  const dispatch = useDispatch();
   return (
     <div className="bg-blue-500 w-full grid grid-cols-13 items-center sticky top-0 z-50">
       <MenuIcon
+        data-testid="hamburger"
         onClick={() => dispatch(actionshowMenuSlide({ show: true }))}
         className="w-10 h-10 text-gray-200 justify-self-center"
       />
