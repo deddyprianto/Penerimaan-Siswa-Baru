@@ -8,7 +8,7 @@ import { signOut } from "next-auth/client";
 const Navbar = () => {
   const dispatch = useDispatch();
   return (
-    <div className="bg-blue-500 w-full grid grid-cols-13 items-center sticky top-0 z-50">
+    <div className="bg-blue-400 w-full grid grid-cols-13 items-center sticky top-0 z-50">
       <MenuIcon
         data-testid="hamburger"
         onClick={() => dispatch(actionshowMenuSlide({ show: true }))}

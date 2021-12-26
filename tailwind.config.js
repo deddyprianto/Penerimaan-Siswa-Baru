@@ -7,7 +7,7 @@ module.exports = {
         400: "400px",
       },
       gridTemplateRows: {
-        8: "70px 1fr 70px",
+        8: "70px 1fr",
       },
       gridTemplateColumns: {
         13: "100px 1fr 2fr",

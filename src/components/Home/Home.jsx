@@ -3,6 +3,7 @@ import About from "./About";
 import Feature from "./Feature";
 import SlideShowImg from "./SlideShowImg";
 import Shimmer from "react-shimmer-effect";
+import Contact from "./Contact";
 
 const Home = () => {
   const [showShimmerq, setShowShimmerq] = useState(true);
@@ -50,6 +51,7 @@ const Home = () => {
           <SlideShowImg />
           <About />
           <Feature />
+          <Contact />
         </React.Fragment>
       )}
     </React.Fragment>

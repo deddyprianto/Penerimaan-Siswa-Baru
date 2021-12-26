@@ -5,15 +5,33 @@ import { collection, addDoc } from "firebase/firestore";
 
 const Input = () => {
   console.log("RENDER");
+  // form siswa
   const [nama, setNama] = useState("Nama Lengkap");
   const [usia, setUsia] = useState("Usia");
   const [tanggalLahir, setTanggalLahir] = useState("Tanggal Lahir");
   const [agama, setAgama] = useState("Agama");
+  const [tempatLahir, setTempatLahir] = useState("Tempat Lahir");
+  const [hobi, setHobi] = useState("Hobi");
+  const [gol, setGol] = useState("Golongan darah");
+  const [asalTK, setAsalTK] = useState(
+    "Asal TK Sebelum nya, Kosongkan jika tidak ada"
+  );
+  const [tinggalBersama, setTinggalBersama] = useState("Tinggal Bersama");
+  const [jumlahSaudara, setJumlahSaudara] = useState("Jumlah Saudara");
+  const [anakke, setAnakke] = useState("Anak Ke berapa");
+
+  // form orang Tua
   const [alamat, setAlamat] = useState("Alamat");
   const [namaAyah, setNamaAyah] = useState("Nama Ayah");
   const [namaIbu, setNamaIbu] = useState("Nama Ibu");
   const [alamatOrangTua, setAlamatOrangTua] = useState("Alamat OrangTua");
   const [pekerjaanAyah, setPekerjaanAyah] = useState("Pekerjaan Ayah");
+  const [tanggal, setTanggal] = useState("Tanggal Lahir");
+  const [tempatTanggalLahir, setTempatTanggalLahir] = useState(
+    "Tempat Tanggal Lahir"
+  );
+  const [penghasilan, setPenghasilan] = useState("Penghasilan PerBulan");
+  const [golDarah, setGolDarah] = useState("Golongan Darah");
   const dataInputan = [
     {
       inputan: nama,
@@ -30,6 +48,34 @@ const Input = () => {
     {
       inputan: agama,
       fnInputan: setAgama,
+    },
+    {
+      inputan: tempatLahir,
+      fnInputan: setTempatLahir,
+    },
+    {
+      inputan: hobi,
+      fnInputan: setHobi,
+    },
+    {
+      inputan: gol,
+      fnInputan: setGol,
+    },
+    {
+      inputan: asalTK,
+      fnInputan: setAsalTK,
+    },
+    {
+      inputan: tinggalBersama,
+      fnInputan: setTinggalBersama,
+    },
+    {
+      inputan: jumlahSaudara,
+      fnInputan: setJumlahSaudara,
+    },
+    {
+      inputan: anakke,
+      fnInputan: setAnakke,
     },
   ];
   const dataInputan2 = [
@@ -48,6 +94,22 @@ const Input = () => {
     {
       inputan: pekerjaanAyah,
       fnInputan: setPekerjaanAyah,
+    },
+    {
+      inputan: tanggal,
+      fnInputan: setTanggal,
+    },
+    {
+      inputan: tempatTanggalLahir,
+      fnInputan: setTempatTanggalLahir,
+    },
+    {
+      inputan: penghasilan,
+      fnInputan: setPenghasilan,
+    },
+    {
+      inputan: golDarah,
+      fnInputan: setGolDarah,
     },
   ];
   const btnFN = async (e) => {
@@ -98,8 +160,6 @@ const Input = () => {
         <h3 className="text-center text-gray-400 font-bold mt-5 text-2xl">
           Input Data Siswa Baru
         </h3>
-
-        <h1></h1>
         <div className="flex flex-col items-center bg-white shadow-lg rounded-lg w-4/5 lg:w-11/12">
           {dataInputan.map((data, key) => (
             <input

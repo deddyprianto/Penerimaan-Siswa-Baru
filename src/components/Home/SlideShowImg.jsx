@@ -5,8 +5,8 @@ import "react-slideshow-image/dist/styles.css";
 const SlideShowImg = () => {
   const slideImage = [
     "https://assets-a1.kompasiana.com/statics/files/14252289631199047237.jpg",
-    "https://assets-a1.kompasiana.com/statics/files/14252289631199047237.jpg",
-    "https://assets-a1.kompasiana.com/statics/files/14252289631199047237.jpg",
+    "https://tabloidsinartani.com/uploads/news/images/770x413/-_190409171240-185.jpg",
+    "https://s.kaskus.id/r540x540/images/2017/11/27/9868774_20171127030651.jpg",
   ];
   const zoomInProperties = {
     scale: 1.4,
