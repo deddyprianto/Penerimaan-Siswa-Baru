@@ -9,7 +9,7 @@ import LayoutDashboard from "../components/Layout/LayoutDashboard";
 let persistor = persistStore(store);
 
 function MyApp({ Component, pageProps }) {
-  console.log("RENDER ULANG FILE _APP");
+  console.log("RENDER ULANG _APP");
   // NAMA EKSTENSION GOOGLE CHROME GRIDMAN -CSS GRID INSPECTOR
 
   return (

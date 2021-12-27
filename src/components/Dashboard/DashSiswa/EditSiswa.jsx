@@ -13,7 +13,6 @@ const EditSiswa = ({ data }) => {
   const [agama, setAgama] = useState("Agama");
   const [alamat, setAlamat] = useState("Alamat");
   const [namaAyah, setNamaAyah] = useState("Nama Ayah");
-  const [namaIbu, setNamaIbu] = useState("Nama Ibu");
   const [alamatOrangTua, setAlamatOrangTua] = useState("Alamat OrangTua");
   const [pekerjaanAyah, setPekerjaanAyah] = useState("Pekerjaan Ayah");
 
@@ -41,10 +40,6 @@ const EditSiswa = ({ data }) => {
       fnInputan: setNamaAyah,
     },
     {
-      inputan: data?.namaIbu,
-      fnInputan: setNamaIbu,
-    },
-    {
       inputan: data?.alamatOrangTua,
       fnInputan: setAlamatOrangTua,
     },
@@ -65,7 +60,6 @@ const EditSiswa = ({ data }) => {
         agama,
         alamat,
         namaAyah,
-        namaIbu,
         alamatOrangTua,
         pekerjaanAyah,
       });

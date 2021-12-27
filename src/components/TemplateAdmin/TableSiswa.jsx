@@ -8,7 +8,6 @@ import { DocumentIcon } from "@heroicons/react/solid";
 
 const TableSiswa = () => {
   const router = useRouter();
-
   const [data, setData] = useState([]);
   const [shimmerMe, setShimmerMe] = useState(true);
   useEffect(() => {
@@ -101,16 +100,24 @@ const TableSiswa = () => {
         <>
           <table className="table-fixed">
             <thead>
-              <tr>
+              <tr className="text-sm">
                 <th className="w-56 border-b-2">Nama Siswa</th>
                 <th className="w-56 border-b-2">Usia</th>
                 <th className="w-56 border-b-2">Tanggal Lahir</th>
                 <th className="w-56 border-b-2">Agama</th>
-                <th className="w-56 border-b-2">Alamat</th>
+                <th className="w-56 border-b-2">Tempat Lahir</th>
+                <th className="w-56 border-b-2">Hobi</th>
+                <th className="w-56 border-b-2">Gol Darah</th>
+                <th className="w-56 border-b-2">Asal TK</th>
+                <th className="w-56 border-b-2">Tinggal Bersama</th>
+                <th className="w-56 border-b-2">Jumlah Saudara</th>
+                <th className="w-56 border-b-2">Anak Ke</th>
                 <th className="w-56 border-b-2">Nama Ayah</th>
-                <th className="w-56 border-b-2">Nama Ibu</th>
-                <th className="w-56 border-b-2">Alamat OrangTua</th>
+
                 <th className="w-56 border-b-2">Pekerjaan Ayah</th>
+                <th className="w-56 border-b-2">Tanggal Lahir Ayah</th>
+                <th className="w-56 border-b-2">Penghasilan</th>
+                <th className="w-56 border-b-2">Gol Darah Ayah</th>
                 <th className="w-56 border-b-2">Menu</th>
               </tr>
             </thead>
@@ -121,11 +128,19 @@ const TableSiswa = () => {
                   <td>{data.usia}</td>
                   <td>{data.tanggalLahir}</td>
                   <td>{data.agama}</td>
-                  <td>{data.alamat}</td>
+                  <td>{data.tempatLahir}</td>
+                  <td>{data.hobi}</td>
+                  <td>{data.gol}</td>
+                  <td>{data.asalTK}</td>
+                  <td>{data.tinggalBersama}</td>
+                  <td>{data.jumlahSaudara}</td>
+                  <td>{data.anakke}</td>
                   <td>{data.namaAyah}</td>
-                  <td>{data.namaIbu}</td>
                   <td>{data.alamatOrangTua}</td>
-                  <td>{data.pekerjaanAyah}</td>
+                  <td>{data.tanggal}</td>
+                  <td>{data.tempatTanggalLahir}</td>
+                  <td>{data.penghasilan}</td>
+                  <td>{data.golDarah}</td>
                   <td>
                     <button
                       className="bg-blue-500 text-gray-100 w-12 h-5 rounded-lg md:w-20 md:h-10 shadow-xl"

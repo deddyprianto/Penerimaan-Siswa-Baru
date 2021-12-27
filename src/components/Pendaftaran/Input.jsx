@@ -23,7 +23,6 @@ const Input = () => {
   // form orang Tua
   const [alamat, setAlamat] = useState("Alamat");
   const [namaAyah, setNamaAyah] = useState("Nama Ayah");
-  const [namaIbu, setNamaIbu] = useState("Nama Ibu");
   const [alamatOrangTua, setAlamatOrangTua] = useState("Alamat OrangTua");
   const [pekerjaanAyah, setPekerjaanAyah] = useState("Pekerjaan Ayah");
   const [tanggal, setTanggal] = useState("Tanggal Lahir");
@@ -32,6 +31,8 @@ const Input = () => {
   );
   const [penghasilan, setPenghasilan] = useState("Penghasilan PerBulan");
   const [golDarah, setGolDarah] = useState("Golongan Darah");
+
+  // calon siswa
   const dataInputan = [
     {
       inputan: nama,
@@ -84,10 +85,6 @@ const Input = () => {
       fnInputan: setNamaAyah,
     },
     {
-      inputan: namaIbu,
-      fnInputan: setNamaIbu,
-    },
-    {
       inputan: alamatOrangTua,
       fnInputan: setAlamatOrangTua,
     },
@@ -120,11 +117,21 @@ const Input = () => {
         usia,
         tanggalLahir,
         agama,
+        tempatLahir,
+        hobi,
+        gol,
+        asalTK,
+        tinggalBersama,
+        jumlahSaudara,
+        anakke,
         alamat,
         namaAyah,
-        namaIbu,
         alamatOrangTua,
         pekerjaanAyah,
+        tanggal,
+        tempatTanggalLahir,
+        penghasilan,
+        golDarah,
       });
       if (docRef.id) {
         Swal.fire({
@@ -139,7 +146,7 @@ const Input = () => {
         setAgama("");
         setAlamat("");
         setNamaAyah("");
-        setNamaIbu("");
+
         setAlamatOrangTua("");
         setPekerjaanAyah("");
       }
