@@ -8,9 +8,10 @@ const Input = () => {
   // form siswa
   const [nama, setNama] = useState("Nama Lengkap");
   const [usia, setUsia] = useState("Usia");
-  const [tanggalLahir, setTanggalLahir] = useState("Tanggal Lahir");
+  const [tempatTanggalLahirAnak, setTempatTanggalLahirAnak] = useState(
+    "Tempat Tanggal Lahir"
+  );
   const [agama, setAgama] = useState("Agama");
-  const [tempatLahir, setTempatLahir] = useState("Tempat Lahir");
   const [hobi, setHobi] = useState("Hobi");
   const [gol, setGol] = useState("Golongan darah");
   const [asalTK, setAsalTK] = useState(
@@ -21,11 +22,9 @@ const Input = () => {
   const [anakke, setAnakke] = useState("Anak Ke berapa");
 
   // form orang Tua
-  const [alamat, setAlamat] = useState("Alamat");
   const [namaAyah, setNamaAyah] = useState("Nama Ayah");
   const [alamatOrangTua, setAlamatOrangTua] = useState("Alamat OrangTua");
   const [pekerjaanAyah, setPekerjaanAyah] = useState("Pekerjaan Ayah");
-  const [tanggal, setTanggal] = useState("Tanggal Lahir");
   const [tempatTanggalLahir, setTempatTanggalLahir] = useState(
     "Tempat Tanggal Lahir"
   );
@@ -43,17 +42,14 @@ const Input = () => {
       fnInputan: setUsia,
     },
     {
-      inputan: tanggalLahir,
-      fnInputan: setTanggalLahir,
+      inputan: tempatTanggalLahirAnak,
+      fnInputan: setTempatTanggalLahirAnak,
     },
     {
       inputan: agama,
       fnInputan: setAgama,
     },
-    {
-      inputan: tempatLahir,
-      fnInputan: setTempatLahir,
-    },
+
     {
       inputan: hobi,
       fnInputan: setHobi,
@@ -93,10 +89,6 @@ const Input = () => {
       fnInputan: setPekerjaanAyah,
     },
     {
-      inputan: tanggal,
-      fnInputan: setTanggal,
-    },
-    {
       inputan: tempatTanggalLahir,
       fnInputan: setTempatTanggalLahir,
     },
@@ -115,20 +107,17 @@ const Input = () => {
       const docRef = await addDoc(collection(db, "datasiswa"), {
         nama,
         usia,
-        tanggalLahir,
+        tempatTanggalLahirAnak,
         agama,
-        tempatLahir,
         hobi,
         gol,
         asalTK,
         tinggalBersama,
         jumlahSaudara,
         anakke,
-        alamat,
         namaAyah,
         alamatOrangTua,
         pekerjaanAyah,
-        tanggal,
         tempatTanggalLahir,
         penghasilan,
         golDarah,
@@ -142,13 +131,21 @@ const Input = () => {
         });
         setNama("");
         setUsia("");
-        setTanggalLahir("");
+        setTempatTanggalLahirAnak("");
         setAgama("");
+        setHobi("");
+        setGol("");
+        setAsalTK("");
+        setTinggalBersama("");
+        setJumlahSaudara("");
+        setAnakke("");
         setAlamat("");
         setNamaAyah("");
-
         setAlamatOrangTua("");
         setPekerjaanAyah("");
+        setTempatTanggalLahir("");
+        setPenghasilan("");
+        setGolDarah("");
       }
     } catch (error) {
       Swal.fire({

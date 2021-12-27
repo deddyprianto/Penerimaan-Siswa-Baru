@@ -7,48 +7,102 @@ import Swal from "sweetalert2";
 const EditSiswa = ({ data }) => {
   const router = useRouter();
   const [refresh, setRefresh] = useState(false);
-  const [nama, setNama] = useState("Nama Lengkap");
-  const [usia, setUsia] = useState("Usia");
-  const [tanggalLahir, setTanggalLahir] = useState("Tanggal Lahir");
-  const [agama, setAgama] = useState("Agama");
-  const [alamat, setAlamat] = useState("Alamat");
-  const [namaAyah, setNamaAyah] = useState("Nama Ayah");
-  const [alamatOrangTua, setAlamatOrangTua] = useState("Alamat OrangTua");
-  const [pekerjaanAyah, setPekerjaanAyah] = useState("Pekerjaan Ayah");
+  const [nama, setNama] = useState(data.nama);
+  const [usia, setUsia] = useState(data.usia);
+  const [tempatTanggalLahirAnak, setTempatTanggalLahirAnak] = useState(
+    data.tempatTanggalLahirAnak
+  );
+  const [agama, setAgama] = useState(data.agama);
+  const [hobi, setHobi] = useState(data.hobi);
+  const [gol, setGol] = useState(data.gol);
+  const [asalTK, setAsalTK] = useState(data.asalTK);
+  const [tinggalBersama, setTinggalBersama] = useState(data.tinggalBersama);
+  const [jumlahSaudara, setJumlahSaudara] = useState(data.jumlahSaudara);
+  const [anakke, setAnakke] = useState(data.anakke);
+
+  // form orang Tua
+  const [namaAyah, setNamaAyah] = useState(data.namaAyah);
+  const [alamatOrangTua, setAlamatOrangTua] = useState(data.alamatOrangTua);
+  const [pekerjaanAyah, setPekerjaanAyah] = useState(data.pekerjaanAyah);
+  const [tempatTanggalLahir, setTempatTanggalLahir] = useState(
+    data.tempatTanggalLahir
+  );
+  const [penghasilan, setPenghasilan] = useState(data.penghasilan);
+  const [golDarah, setGolDarah] = useState(data.golDarah);
 
   const dataInputan = [
     {
-      inputan: data?.nama,
+      inputan: nama,
       fnInputan: setNama,
     },
     {
-      inputan: data?.usia,
+      inputan: usia,
       fnInputan: setUsia,
     },
     {
-      inputan: data?.tanggalLahir,
-      fnInputan: setTanggalLahir,
+      inputan: tempatTanggalLahirAnak,
+      fnInputan: setTempatTanggalLahirAnak,
     },
     {
-      inputan: data?.agama,
+      inputan: agama,
       fnInputan: setAgama,
+    },
+
+    {
+      inputan: hobi,
+      fnInputan: setHobi,
+    },
+    {
+      inputan: gol,
+      fnInputan: setGol,
+    },
+    {
+      inputan: asalTK,
+      fnInputan: setAsalTK,
+    },
+    {
+      inputan: tinggalBersama,
+      fnInputan: setTinggalBersama,
+    },
+    {
+      inputan: jumlahSaudara,
+      fnInputan: setJumlahSaudara,
+    },
+    {
+      inputan: anakke,
+      fnInputan: setAnakke,
     },
   ];
   const dataInputan2 = [
     {
-      inputan: data?.namaAyah,
+      inputan: namaAyah,
       fnInputan: setNamaAyah,
     },
     {
-      inputan: data?.alamatOrangTua,
+      inputan: alamatOrangTua,
       fnInputan: setAlamatOrangTua,
     },
     {
-      inputan: data?.pekerjaanAyah,
+      inputan: pekerjaanAyah,
       fnInputan: setPekerjaanAyah,
     },
+    {
+      inputan: tempatTanggalLahir,
+      fnInputan: setTempatTanggalLahir,
+    },
+    {
+      inputan: penghasilan,
+      fnInputan: setPenghasilan,
+    },
+    {
+      inputan: golDarah,
+      fnInputan: setGolDarah,
+    },
   ];
+  // debugging
   console.log("render ulang");
+  // end debugging
+
   const btnFN = async (e) => {
     e.preventDefault();
     try {
@@ -56,14 +110,21 @@ const EditSiswa = ({ data }) => {
       const docRef = await updateDoc(updateData, {
         nama,
         usia,
-        tanggalLahir,
+        tempatTanggalLahirAnak,
         agama,
-        alamat,
+        hobi,
+        gol,
+        asalTK,
+        tinggalBersama,
+        jumlahSaudara,
+        anakke,
         namaAyah,
         alamatOrangTua,
         pekerjaanAyah,
+        tempatTanggalLahir,
+        penghasilan,
+        golDarah,
       });
-
       const swal = await Swal.fire({
         title: "Berhasil!",
         text: "Data Berhasil Di Edit",

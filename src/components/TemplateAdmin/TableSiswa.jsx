@@ -10,6 +10,7 @@ const TableSiswa = () => {
   const router = useRouter();
   const [data, setData] = useState([]);
   const [shimmerMe, setShimmerMe] = useState(true);
+
   useEffect(() => {
     let data = getDocs(collection(db, "datasiswa"));
     let dataArr = [];
@@ -103,7 +104,7 @@ const TableSiswa = () => {
               <tr className="text-sm">
                 <th className="w-56 border-b-2">Nama Siswa</th>
                 <th className="w-56 border-b-2">Usia</th>
-                <th className="w-56 border-b-2">Tanggal Lahir</th>
+                <th className="w-56 border-b-2">TTL</th>
                 <th className="w-56 border-b-2">Agama</th>
                 <th className="w-56 border-b-2">Tempat Lahir</th>
                 <th className="w-56 border-b-2">Hobi</th>
@@ -115,7 +116,7 @@ const TableSiswa = () => {
                 <th className="w-56 border-b-2">Nama Ayah</th>
 
                 <th className="w-56 border-b-2">Pekerjaan Ayah</th>
-                <th className="w-56 border-b-2">Tanggal Lahir Ayah</th>
+                <th className="w-56 border-b-2">TTL Ayah</th>
                 <th className="w-56 border-b-2">Penghasilan</th>
                 <th className="w-56 border-b-2">Gol Darah Ayah</th>
                 <th className="w-56 border-b-2">Menu</th>
@@ -126,9 +127,8 @@ const TableSiswa = () => {
                 <tr key={data.id} className="text-center border-b-2 h-14">
                   <td>{data.nama}</td>
                   <td>{data.usia}</td>
-                  <td>{data.tanggalLahir}</td>
+                  <td>{data.tempatTanggalLahirAnak}</td>
                   <td>{data.agama}</td>
-                  <td>{data.tempatLahir}</td>
                   <td>{data.hobi}</td>
                   <td>{data.gol}</td>
                   <td>{data.asalTK}</td>
@@ -137,7 +137,7 @@ const TableSiswa = () => {
                   <td>{data.anakke}</td>
                   <td>{data.namaAyah}</td>
                   <td>{data.alamatOrangTua}</td>
-                  <td>{data.tanggal}</td>
+                  <td>{data.pekerjaanAyah}</td>
                   <td>{data.tempatTanggalLahir}</td>
                   <td>{data.penghasilan}</td>
                   <td>{data.golDarah}</td>

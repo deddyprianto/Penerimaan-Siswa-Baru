@@ -5,6 +5,7 @@ import db from "firebaseConf";
 const EditSiswa = dynamic(() =>
   import("components/Dashboard/DashSiswa/EditSiswa")
 );
+
 const Post = ({ data }) => <EditSiswa data={data} />;
 export default Post;
 

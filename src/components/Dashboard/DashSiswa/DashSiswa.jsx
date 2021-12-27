@@ -3,6 +3,7 @@ import TableSiswa from "components/TemplateAdmin/TableSiswa";
 import React, { useState } from "react";
 import { DocumentIcon, EyeIcon } from "@heroicons/react/solid";
 import { PDFDocument, StandardFonts, rgb } from "pdf-lib";
+import Swal from "sweetalert2";
 
 const DashSiswa = () => {
   const [pdfurl, setPdfurl] = useState("");
@@ -12,8 +13,14 @@ const DashSiswa = () => {
     const pdfDOC = await PDFDocument.create();
     const page = pdfDOC.addPage([350, 400]);
     page.moveTo(110, 200);
-    page.drawText("Heloo World");
+    page.drawText();
     const pdfDataUri = await pdfDOC.saveAsBase64({ dataUri: true });
+    Swal.fire({
+      title: "Berhasil!",
+      text: "Data Berhasil Di ubah ke FILE PDF, Sekarang Nikmatilah",
+      icon: "success",
+      confirmButtonText: "Tutup",
+    });
     setPdfurl(pdfDataUri);
   };
 
