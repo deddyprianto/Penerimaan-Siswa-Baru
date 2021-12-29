@@ -23,6 +23,7 @@ const Input = () => {
 
   // form orang Tua
   const [namaAyah, setNamaAyah] = useState("Nama Ayah");
+  const [namaIbu, setNamaIbu] = useState("Nama Ibu");
   const [alamatOrangTua, setAlamatOrangTua] = useState("Alamat OrangTua");
   const [pekerjaanAyah, setPekerjaanAyah] = useState("Pekerjaan Ayah");
   const [tempatTanggalLahir, setTempatTanggalLahir] = useState(
@@ -30,8 +31,6 @@ const Input = () => {
   );
   const [penghasilan, setPenghasilan] = useState("Penghasilan PerBulan");
   const [golDarah, setGolDarah] = useState("Golongan Darah");
-
-  // calon siswa
   const dataInputan = [
     {
       inputan: nama,
@@ -81,6 +80,10 @@ const Input = () => {
       fnInputan: setNamaAyah,
     },
     {
+      inputan: namaIbu,
+      fnInputan: setNamaIbu,
+    },
+    {
       inputan: alamatOrangTua,
       fnInputan: setAlamatOrangTua,
     },
@@ -109,18 +112,26 @@ const Input = () => {
         usia,
         tempatTanggalLahirAnak,
         agama,
+<<<<<<< HEAD
         hobi,
         gol,
         asalTK,
         tinggalBersama,
         jumlahSaudara,
         anakke,
+=======
+        alamat,
+>>>>>>> parent of e3343a4 (menambahkan terbaru)
         namaAyah,
+        namaIbu,
         alamatOrangTua,
         pekerjaanAyah,
+<<<<<<< HEAD
         tempatTanggalLahir,
         penghasilan,
         golDarah,
+=======
+>>>>>>> parent of e3343a4 (menambahkan terbaru)
       });
       if (docRef.id) {
         Swal.fire({
@@ -141,6 +152,10 @@ const Input = () => {
         setAnakke("");
         setAlamat("");
         setNamaAyah("");
+<<<<<<< HEAD
+=======
+        setNamaIbu("");
+>>>>>>> parent of e3343a4 (menambahkan terbaru)
         setAlamatOrangTua("");
         setPekerjaanAyah("");
         setTempatTanggalLahir("");

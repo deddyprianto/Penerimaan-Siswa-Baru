@@ -1,43 +1,32 @@
-const data = [
-  {
-    nama: "deddy",
-    kelas: "SI",
-    apakahAlumni: "yaa",
-    tahun: 2017,
-  },
-  {
-    nama: "Devan",
-    kelas: "SI",
-    apakahAlumni: "yaa",
-    tahun: 2018,
-  },
-  {
-    nama: "Rio",
-    kelas: "SI",
-    apakahAlumni: "yaa",
-    tahun: 2019,
-  },
-  {
-    nama: "Fauzi",
-    kelas: "SI",
-    apakahAlumni: "yaa",
-    tahun: 2017,
-  },
-];
-const groupByCategory = data.reduce((group, product) => {
-  const { tahun } = product;
-  group[tahun] = group[tahun] ?? [];
-  group[tahun].push(product);
-  return group;
-}, {});
-for (m in groupByCategory) {
-  if (m === "2017") {
-    console.log(groupByCategory[m]);
-  }
-}
-// let a = [];
-// data.map((da) => {
-//   const dataAm = { id: 112 };
-//   a.push({ ...da, id: dataAm });
-// });
-// console.log(a);
+// const products = [
+//   { nama: "arman", hobi: "main Bola", usia: 12, jenisKelamin: "laki-laki" },
+//   {
+//     nama: "Ratna Sinambela",
+//     hobi: "main Tenis",
+//     usia: 13,
+//     jenisKelamin: "perempuan",
+//   },
+//   {
+//     nama: "asep supriadi",
+//     hobi: "main Tenis",
+//     usia: 13,
+//     jenisKelamin: "laki-laki",
+//   },
+//   {
+//     nama: "Raisa Simarmata",
+//     hobi: "Renang",
+//     usia: 14,
+//     jenisKelamin: "perempuan",
+//   },
+// ];
+// // STEP 1
+
+// const dataGropByName = products.reduce((acc, curr) => {
+//   const { jenisKelamin } = curr;
+//   acc[jenisKelamin] = acc[jenisKelamin] ?? [];
+//   acc[jenisKelamin].push(curr);
+//   return acc;
+// }, {});
+// console.log(dataGropByName);
+
+// console.log(products.at(1));

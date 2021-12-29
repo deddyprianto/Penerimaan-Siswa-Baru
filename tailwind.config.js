@@ -11,7 +11,7 @@ module.exports = {
       },
       gridTemplateColumns: {
         13: "100px 1fr 2fr",
-        14: "230px 1fr",
+        14: "270px 1fr",
       },
       keyframes: {
         wiggle: {

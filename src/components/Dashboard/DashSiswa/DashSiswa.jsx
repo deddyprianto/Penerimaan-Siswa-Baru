@@ -36,13 +36,13 @@ const DashSiswa = () => {
       </div>
       <button
         onClick={renderPDF}
-        className="rounded bg-blue-500 w-20 h-10 lg:w-24 text-sm lg:text-lg lg:h-14 self-end text-gray-200 flex justify-center items-center mt-10 font-semibold"
+        className="rounded bg-blue-500 w-20 h-10 lg:w-32 text-sm lg:text-lg lg:h-14 self-end text-gray-200 flex justify-center items-center mt-10 font-semibold"
       >
         Ubah Ke PDF
         <DocumentIcon className="h-7 w-h-7 text-white" />
       </button>
       <a
-        className="rounded bg-red-500  w-20 h-10 lg:w-24 text-sm lg:text-lg lg:h-14 self-end text-gray-200 flex justify-center items-center mt-2 font-semibold truncate"
+        className="rounded bg-red-500  w-20 h-10 lg:w-32 text-sm lg:text-lg lg:h-14 self-end text-gray-200 flex justify-center items-center mt-2 font-semibold truncate"
         href={pdfurl}
         target="_blank"
         rel="noreferrer"
