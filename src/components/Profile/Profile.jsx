@@ -1,49 +1,56 @@
-import React from "react";
-import Image from "next/image";
+import React, { useState, useRef } from "react";
 
-const Profile = ({ dataFinal }) => {
-  const { result } = dataFinal;
-  console.log(result);
+const Profile = ({ data }) => {
+  const inputRef = useRef(null);
+  const [dataAwal, setDataAwal] = useState(data);
+  const [dataFilter, setDataFilter] = useState([]);
+
+  const fnData = () => {
+    const inputan = Number(inputRef.current.value);
+    setDataFilter(data.filter((da) => da.id === inputan));
+  };
+  const fnDesc = () => {
+    const arrData = [];
+    const dataShallowCopy = Object.assign(arrData, dataAwal);
+    setDataAwal(dataShallowCopy.sort((a, b) => b.id - a.id));
+  };
   return (
-    <div className="w-full bg-gray-100 flex flex-col items-center">
-      <div className="w-full lg:w-2/5 mt-10">
-        <h1 className="text-gray-500 font-bold text-2xl mt-2 mb-2">
-          Artikel Terbaru
-        </h1>
-        <div className="w-full flex">
-          <div className="h-1 w-1/4 bg-yellow-300 " />
-          <div className="h-1 w-3/4 bg-blue-600 " />
-        </div>
-      </div>
-      <div className="bg-white shadow-lg w-full h-1/2 rounded-lg lg:w-2/5 lg:h-1/2 p-2 overflow-y-auto">
-        {result.map((data, key) => {
-          return (
-            <div
-              key={key}
-              className="flex flex-col justify-center items-start lg:flex-row"
-            >
-              <img
-                src={data.image}
-                className="rounded mt-10 w-full  h-1/2 lg:w-52 h-32"
-              />
-
-              <div className="flex flex-col justify-center items-center mt-7 ml-5">
-                <h2 className="text-gray-400 text-2xl font-semibold">
-                  {data.title}
-                </h2>
-                <p className="text-gray-300 text-lg font-semibold">
-                  {data.content}
-                </p>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-      <div className=" mt-5 w-full lg:w-1/3 ">
-        <hr className="divide-gray-900" />
-        <p className="text-gray-400 text-lg font-semibold text-center">
-          @CopyRigth 2021 PT KlikCair Magga Jaya
-        </p>
+    <div className="bg-gray-700 w-full flex justify-center items-center flex-col">
+      <input
+        ref={inputRef}
+        className="w-1/2 rounded-lg h-10"
+        type="Masukkan Pencarian Data Anda Disini"
+      />
+      <button
+        onClick={fnData}
+        className="text-gray-200 w-56 h-10 m-2  bg-blue-500 rounded text-xl"
+      >
+        Cari data
+      </button>
+      <button
+        onClick={fnDesc}
+        className="text-gray-200 w-64 h-10 m-2  bg-blue-500 rounded text-lg"
+      >
+        Urutkan Data Dengan Menurun
+      </button>
+      <div className="w-1/2 h-1/2 bg-white shadow-lg rounded-lg flex justify-center items-center flex-col overflow-y-auto p-10">
+        {dataFilter.length >= 1
+          ? dataFilter.map((d, i) => {
+              return (
+                <React.Fragment key={i}>
+                  <h1 className="text-gray-400 text-lg">{d.title}</h1>
+                  <p className="text-gray-300 text-sm">{d.body}</p>
+                </React.Fragment>
+              );
+            })
+          : dataAwal.map((data, i) => {
+              return (
+                <React.Fragment key={i}>
+                  <h1 className="text-gray-400 text-lg">{data.title}</h1>
+                  <p className="text-gray-300 text-sm">{data.body}</p>
+                </React.Fragment>
+              );
+            })}
       </div>
     </div>
   );

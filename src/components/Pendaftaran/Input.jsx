@@ -80,10 +80,6 @@ const Input = () => {
       fnInputan: setNamaAyah,
     },
     {
-      inputan: namaIbu,
-      fnInputan: setNamaIbu,
-    },
-    {
       inputan: alamatOrangTua,
       fnInputan: setAlamatOrangTua,
     },
@@ -112,26 +108,18 @@ const Input = () => {
         usia,
         tempatTanggalLahirAnak,
         agama,
-<<<<<<< HEAD
         hobi,
         gol,
         asalTK,
         tinggalBersama,
         jumlahSaudara,
         anakke,
-=======
-        alamat,
->>>>>>> parent of e3343a4 (menambahkan terbaru)
         namaAyah,
-        namaIbu,
         alamatOrangTua,
         pekerjaanAyah,
-<<<<<<< HEAD
         tempatTanggalLahir,
         penghasilan,
         golDarah,
-=======
->>>>>>> parent of e3343a4 (menambahkan terbaru)
       });
       if (docRef.id) {
         Swal.fire({
@@ -150,12 +138,7 @@ const Input = () => {
         setTinggalBersama("");
         setJumlahSaudara("");
         setAnakke("");
-        setAlamat("");
         setNamaAyah("");
-<<<<<<< HEAD
-=======
-        setNamaIbu("");
->>>>>>> parent of e3343a4 (menambahkan terbaru)
         setAlamatOrangTua("");
         setPekerjaanAyah("");
         setTempatTanggalLahir("");
@@ -163,6 +146,7 @@ const Input = () => {
         setGolDarah("");
       }
     } catch (error) {
+      console.log(error);
       Swal.fire({
         title: "Gagal!",
         text: "Data Gagal Dikirim",
@@ -182,7 +166,7 @@ const Input = () => {
         <div className="flex flex-col items-center bg-white shadow-lg rounded-lg w-4/5 lg:w-11/12">
           {dataInputan.map((data, key) => (
             <input
-              className="w-4/5 bg-gray-100 m-2 rounded-lg h-10 outline-none text-center"
+              className="w-4/5 bg-gray-100 m-2 rounded-lg h-10 outline-none text-center text-gray-500"
               key={key}
               type="text"
               placeholder={data.inputan}
@@ -199,7 +183,7 @@ const Input = () => {
         <div className="flex flex-col items-center bg-white shadow-lg rounded-lg w-4/5 lg:w-11/12">
           {dataInputan2.map((data, key) => (
             <input
-              className="w-4/5 bg-gray-100 m-2 rounded-lg h-10 outline-none text-center"
+              className="w-4/5 bg-gray-100 m-2 rounded-lg h-10 outline-none text-center text-gray-500"
               key={key}
               type="text"
               placeholder={data.inputan}

@@ -16,7 +16,7 @@ const CardGuru = () => {
     return () => clearTimeout(clean);
   }, []);
   return (
-    <div className="w-full h-96  grid grid-cols-1 grid-rows-4 items-center justify-items-center md:grid-cols-2 md:grid-rows-2">
+    <div className="w-full h-96  grid grid-cols-1 grid-rows-4 items-center justify-items-center md:grid-cols-2 md:grid-rows-2 md:gap-x-10">
       {/* card */}
       {shimmerMe ? (
         <React.Fragment>
@@ -51,7 +51,7 @@ const CardGuru = () => {
         </React.Fragment>
       ) : (
         <>
-          <div className="flex justify-center items-center  w-11/12 h-full md:w-9/12 ">
+          <div className="flex justify-center items-center  w-11/12 h-full md:w-1/2 md:justify-self-end">
             <div className="shadow-lg rounded-lg bg-white flex flex-col items-center justify-evenly w-full h-5/6">
               <h3 className="text-gray-300 font-bold text-sm lg:text-xl text-center">
                 Jumlah Guru yang aktive: 23 Guru
@@ -59,7 +59,7 @@ const CardGuru = () => {
               <UserGroupIcon className="h-10 w-10 text-green-300" />
             </div>
           </div>
-          <div className="flex justify-center items-center w-11/12  h-full md:w-9/12">
+          <div className="flex justify-center items-center w-11/12  h-full md:w-1/2 md:justify-self-start">
             <div className="shadow-lg rounded-lg bg-white flex flex-col items-center justify-evenly w-full h-5/6">
               <h3 className="text-gray-300 font-bold text-sm lg:text-xl text-center">
                 Jumlah Mata Pelajaran Guru yang aktive: 23
@@ -67,7 +67,7 @@ const CardGuru = () => {
               <BookOpenIcon className="h-10 w-10 text-green-300" />
             </div>
           </div>
-          <div className="flex justify-center items-center w-11/12 h-full md:w-9/12">
+          <div className="flex justify-center items-center w-11/12 h-full md:w-1/2 md:justify-self-end">
             <div className="shadow-lg rounded-lg bg-white flex flex-col items-center justify-evenly  h-5/6 w-full">
               <h3 className="text-gray-300 font-bold text-sm lg:text-xl">
                 Jadwal Guru yang berlaku: 7
@@ -75,7 +75,7 @@ const CardGuru = () => {
               <ClipboardListIcon className="h-10 w-10 text-green-300" />
             </div>
           </div>
-          <div className="flex justify-center items-center w-11/12  h-full md:w-9/12">
+          <div className="flex justify-center items-center w-11/12  h-full md:w-1/2 md:justify-self-start">
             <div className="shadow-lg rounded-lg bg-white flex flex-col items-center justify-evenly w-full h-5/6">
               <h3 className="text-gray-300 font-bold text-sm lg:text-xl">
                 Jumlah Guru yang aktive: 23

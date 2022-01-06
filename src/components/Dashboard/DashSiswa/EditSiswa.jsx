@@ -7,7 +7,6 @@ import Swal from "sweetalert2";
 const EditSiswa = ({ data }) => {
   const router = useRouter();
   const [refresh, setRefresh] = useState(false);
-<<<<<<< HEAD
   const [nama, setNama] = useState(data.nama);
   const [usia, setUsia] = useState(data.usia);
   const [tempatTanggalLahirAnak, setTempatTanggalLahirAnak] = useState(
@@ -30,17 +29,6 @@ const EditSiswa = ({ data }) => {
   );
   const [penghasilan, setPenghasilan] = useState(data.penghasilan);
   const [golDarah, setGolDarah] = useState(data.golDarah);
-=======
-  const [nama, setNama] = useState("Nama Lengkap");
-  const [usia, setUsia] = useState("Usia");
-  const [tanggalLahir, setTanggalLahir] = useState("Tanggal Lahir");
-  const [agama, setAgama] = useState("Agama");
-  const [alamat, setAlamat] = useState("Alamat");
-  const [namaAyah, setNamaAyah] = useState("Nama Ayah");
-  const [namaIbu, setNamaIbu] = useState("Nama Ibu");
-  const [alamatOrangTua, setAlamatOrangTua] = useState("Alamat OrangTua");
-  const [pekerjaanAyah, setPekerjaanAyah] = useState("Pekerjaan Ayah");
->>>>>>> parent of e3343a4 (menambahkan terbaru)
 
   const dataInputan = [
     {
@@ -91,15 +79,7 @@ const EditSiswa = ({ data }) => {
       fnInputan: setNamaAyah,
     },
     {
-<<<<<<< HEAD
       inputan: alamatOrangTua,
-=======
-      inputan: data?.namaIbu,
-      fnInputan: setNamaIbu,
-    },
-    {
-      inputan: data?.alamatOrangTua,
->>>>>>> parent of e3343a4 (menambahkan terbaru)
       fnInputan: setAlamatOrangTua,
     },
     {
@@ -156,6 +136,7 @@ const EditSiswa = ({ data }) => {
         setRefresh(true);
       }
     } catch (error) {
+      console.log(error);
       Swal.fire({
         title: "Gagal!",
         text: "Data Gagal Dikirim",

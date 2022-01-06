@@ -112,12 +112,9 @@ const TableSiswa = () => {
                 <th className="w-56 border-b-2">Nama Ibu</th>
                 <th className="w-56 border-b-2">Alamat OrangTua</th>
                 <th className="w-56 border-b-2">Pekerjaan Ayah</th>
-<<<<<<< HEAD
                 <th className="w-56 border-b-2">TTL Ayah</th>
                 <th className="w-56 border-b-2">Penghasilan</th>
                 <th className="w-56 border-b-2">Gol Darah Ayah</th>
-=======
->>>>>>> parent of e3343a4 (menambahkan terbaru)
                 <th className="w-56 border-b-2">Menu</th>
               </tr>
             </thead>
@@ -128,26 +125,19 @@ const TableSiswa = () => {
                   <td>{data.usia}</td>
                   <td>{data.tempatTanggalLahirAnak}</td>
                   <td>{data.agama}</td>
-<<<<<<< HEAD
                   <td>{data.hobi}</td>
                   <td>{data.gol}</td>
                   <td>{data.asalTK}</td>
                   <td>{data.tinggalBersama}</td>
                   <td>{data.jumlahSaudara}</td>
                   <td>{data.anakke}</td>
-=======
-                  <td>{data.alamat}</td>
->>>>>>> parent of e3343a4 (menambahkan terbaru)
                   <td>{data.namaAyah}</td>
                   <td>{data.namaIbu}</td>
                   <td>{data.alamatOrangTua}</td>
                   <td>{data.pekerjaanAyah}</td>
-<<<<<<< HEAD
                   <td>{data.tempatTanggalLahir}</td>
                   <td>{data.penghasilan}</td>
                   <td>{data.golDarah}</td>
-=======
->>>>>>> parent of e3343a4 (menambahkan terbaru)
                   <td>
                     <button
                       className="bg-blue-500 text-gray-100 w-12 h-5 rounded-lg md:w-20 md:h-10 shadow-xl"

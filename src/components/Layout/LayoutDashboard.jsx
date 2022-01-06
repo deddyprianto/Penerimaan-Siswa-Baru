@@ -41,7 +41,10 @@ const LayoutDashboard = ({ children, dataUser }) => {
   ];
 
   return (
-    <div className="w-full grid grid-cols-14 h-screen bg-gray-100">
+    <div
+      className="w-full grid grid-cols-14 h-screen"
+      style={{ backgroundColor: "#F3F7F7" }}
+    >
       {/* SIDEBAR */}
       <div className="w-full bg-blue-500 h-full flex flex-col items-center justify-center rounded-r-full">
         <div className="flex justify-center items-center">
@@ -76,7 +79,10 @@ const LayoutDashboard = ({ children, dataUser }) => {
       </div>
       {/* end SIDEBAR */}
       {/* main content */}
-      <div className="overflow-y-scroll w-full h-screen bg-gray-100">
+      <div
+        className="overflow-y-scroll w-full h-screen"
+        style={{ backgroundColor: "#F3F7F7" }}
+      >
         {children}
       </div>
     </div>
