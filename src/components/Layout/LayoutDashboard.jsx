@@ -18,11 +18,7 @@ const LayoutDashboard = ({ children, dataUser }) => {
       icons: <HomeIcon className="w-10 h-w-10 text-gray-300" />,
       to: "/admin",
     },
-    {
-      list: "Akademik",
-      icons: <AcademicCapIcon className="w-10 h-w-10 text-gray-300" />,
-      to: "/Akademik",
-    },
+
     {
       list: "Data Guru",
       icons: <UserGroupIcon className="w-10 h-w-10 text-gray-300" />,
@@ -33,11 +29,6 @@ const LayoutDashboard = ({ children, dataUser }) => {
       icons: <ClipboardListIcon className="w-10 h-w-10 text-gray-300" />,
       to: "/admin/siswa",
     },
-    {
-      list: "Berkas Lain",
-      icons: <DocumentDuplicateIcon className="w-10 h-w-10 text-gray-300" />,
-      to: "/berkas",
-    },
   ];
 
   return (
@@ -46,7 +37,7 @@ const LayoutDashboard = ({ children, dataUser }) => {
       style={{ backgroundColor: "#F3F7F7" }}
     >
       {/* SIDEBAR */}
-      <div className="w-full bg-blue-500 h-full flex flex-col items-center justify-center rounded-r-full">
+      <div className="w-full bg-blue-500 h-full flex flex-col items-center justify-center rounded-r-lg lg:rounded-r-3xl 2xl:rounded-r-full ">
         <div className="flex justify-center items-center">
           <Image
             src={dataUser?.user.image}

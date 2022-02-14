@@ -4,7 +4,6 @@ import db from "../../firebaseConf";
 import { collection, addDoc } from "firebase/firestore";
 
 const Input = () => {
-  console.log("RENDER");
   // form siswa
   const [nama, setNama] = useState("Nama Lengkap");
   const [usia, setUsia] = useState("Usia");
@@ -20,7 +19,6 @@ const Input = () => {
   const [tinggalBersama, setTinggalBersama] = useState("Tinggal Bersama");
   const [jumlahSaudara, setJumlahSaudara] = useState("Jumlah Saudara");
   const [anakke, setAnakke] = useState("Anak Ke berapa");
-
   // form orang Tua
   const [namaAyah, setNamaAyah] = useState("Nama Ayah");
   const [namaIbu, setNamaIbu] = useState("Nama Ibu");
@@ -100,6 +98,7 @@ const Input = () => {
       fnInputan: setGolDarah,
     },
   ];
+
   const btnFN = async (e) => {
     e.preventDefault();
     try {
@@ -155,7 +154,7 @@ const Input = () => {
       });
     }
   };
-
+  console.log("RENDER PAGE INPUT");
   return (
     <div className="w-full grid grid-cols-1 grid-rows-3 md:grid-cols-4 md:grid-rows-1">
       {/* col pertama Dta diri anak */}

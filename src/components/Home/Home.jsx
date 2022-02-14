@@ -7,6 +7,7 @@ import Contact from "./Contact";
 
 const Home = () => {
   const [showShimmerq, setShowShimmerq] = useState(true);
+
   useLayoutEffect(() => {
     let cleanEffect = setTimeout(() => {
       setShowShimmerq(false);

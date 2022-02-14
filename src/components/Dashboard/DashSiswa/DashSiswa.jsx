@@ -10,7 +10,6 @@ import db from "../../../firebaseConf";
 const DashSiswa = () => {
   const [pdfurl, setPdfurl] = useState("");
   const [showLoading, setshowLoading] = useState(false);
-
   useEffect(() => {
     const cleanTime = setTimeout(() => {
       setshowLoading(false);
@@ -35,13 +34,13 @@ const DashSiswa = () => {
     const page = pdfDOC.addPage(PageSizes.Letter);
     const { width, height } = page.getSize();
     const fontSize = 30;
-
     page.drawText("Nama Siswa Baru SD Swasta Getsemane:", {
       x: 50,
       y: height - 4 * fontSize,
       size: fontSize,
       color: rgb(0, 0.53, 0.71),
     });
+
     const personField = form.createOptionList("favorite.person");
     personField.addOptions(dataFinal.map((data) => data.nama));
     personField.select("Deddy Prianto");
@@ -68,7 +67,7 @@ const DashSiswa = () => {
       </div>
       <button
         onClick={renderPDF}
-        className="rounded bg-blue-500 w-20 h-10 lg:w-32 text-sm lg:text-lg lg:h-14 self-end text-gray-200 flex justify-center items-center mt-10 font-semibold"
+        className="rounded bg-blue-500 w-16 h-10 lg:w-32 text-sm lg:text-sm lg:h-14 self-end text-gray-200 flex justify-center items-center mt-10 font-semibold"
       >
         Ubah Ke PDF
         {showLoading ? (
@@ -81,7 +80,7 @@ const DashSiswa = () => {
         )}
       </button>
       <a
-        className="rounded bg-red-500  w-20 h-10 lg:w-32 text-sm lg:text-lg lg:h-14 self-end text-gray-200 flex justify-center items-center mt-2 font-semibold truncate"
+        className="rounded bg-red-500  w-16 h-10 lg:w-32 text-sm lg:text-sm lg:h-14 self-end text-gray-200 flex justify-center items-center mt-2 font-semibold truncate"
         href={pdfurl}
         target="_blank"
         rel="noreferrer"

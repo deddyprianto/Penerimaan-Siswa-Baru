@@ -2,8 +2,10 @@
 import React, { useEffect, useState } from "react";
 import Input from "../Pendaftaran/Input";
 import Shimmer from "react-shimmer-effect";
+import { actionData } from "features/app/appSlice";
 
 const Pendaftaran = () => {
+  console.log("render page Parent Components");
   const [shimmer, setShimmer] = useState(true);
   useEffect(() => {
     let cleanTimeOut = setTimeout(() => {
@@ -13,6 +15,7 @@ const Pendaftaran = () => {
       clearTimeout(cleanTimeOut);
     };
   }, []);
+  // COMPONENT
   return (
     <div className="h-full relative">
       {shimmer ? (

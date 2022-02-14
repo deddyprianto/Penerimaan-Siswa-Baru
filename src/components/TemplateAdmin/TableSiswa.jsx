@@ -8,9 +8,9 @@ import { DocumentIcon } from "@heroicons/react/solid";
 
 const TableSiswa = () => {
   const router = useRouter();
-
   const [data, setData] = useState([]);
   const [shimmerMe, setShimmerMe] = useState(true);
+  const [stateLoading, setStateLoading] = useState(false);
 
   useEffect(() => {
     let data = getDocs(collection(db, "datasiswa"));
@@ -21,7 +21,7 @@ const TableSiswa = () => {
       });
     });
     setData(dataArr);
-  }, []);
+  }, [stateLoading]);
 
   useEffect(() => {
     let clean = setTimeout(() => {
@@ -34,10 +34,18 @@ const TableSiswa = () => {
     try {
       await deleteDoc(doc(db, "datasiswa", id));
       Swal.fire({
-        title: "Berhasil!",
-        text: "Data Berhasil Di Hapus",
-        icon: "success",
-        confirmButtonText: "Tutup",
+        title: "Apakah yakin akan di hapus?",
+        text: "Kamu tidak akan bisa mengembalikan ini",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Ya, Hapus!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          setStateLoading(true);
+          Swal.fire("Terhapus!", "data berhasil di hapus.", "success");
+        }
       });
     } catch (error) {
       Swal.fire({
@@ -107,20 +115,27 @@ const TableSiswa = () => {
                 <th className="w-56 border-b-2">Usia</th>
                 <th className="w-56 border-b-2">TTL</th>
                 <th className="w-56 border-b-2">Agama</th>
-                <th className="w-56 border-b-2">Alamat</th>
+                <th className="w-56 border-b-2">Hobi</th>
+                <th className="w-56 border-b-2">Gol Darah</th>
+                <th className="w-56 border-b-2">Asal TK</th>
+                <th className="w-56 border-b-2">Tinggal Bersama</th>
+                <th className="w-56 border-b-2">Jumlah Saudara</th>
+                <th className="w-56 border-b-2">Anak Ke</th>
                 <th className="w-56 border-b-2">Nama Ayah</th>
-                <th className="w-56 border-b-2">Nama Ibu</th>
                 <th className="w-56 border-b-2">Alamat OrangTua</th>
                 <th className="w-56 border-b-2">Pekerjaan Ayah</th>
-                <th className="w-56 border-b-2">TTL Ayah</th>
+                <th className="w-56 border-b-2">TTL</th>
                 <th className="w-56 border-b-2">Penghasilan</th>
-                <th className="w-56 border-b-2">Gol Darah Ayah</th>
+                <th className="w-56 border-b-2">Gol Darah</th>
                 <th className="w-56 border-b-2">Menu</th>
               </tr>
             </thead>
             <tbody>
               {data.map((data) => (
-                <tr key={data.id} className="text-center border-b-2 h-14">
+                <tr
+                  key={data.id}
+                  className="text-center border-b-2 h-14 mt-3 mb-3"
+                >
                   <td>{data.nama}</td>
                   <td>{data.usia}</td>
                   <td>{data.tempatTanggalLahirAnak}</td>
@@ -132,7 +147,6 @@ const TableSiswa = () => {
                   <td>{data.jumlahSaudara}</td>
                   <td>{data.anakke}</td>
                   <td>{data.namaAyah}</td>
-                  <td>{data.namaIbu}</td>
                   <td>{data.alamatOrangTua}</td>
                   <td>{data.pekerjaanAyah}</td>
                   <td>{data.tempatTanggalLahir}</td>
@@ -148,7 +162,7 @@ const TableSiswa = () => {
                       Edit
                     </button>
                     <button
-                      className="bg-red-500 text-gray-100 w-12 h-5 rounded-lg md:w-20 md:h-10 shadow-xl"
+                      className="bg-red-300 text-gray-100 w-12 h-5 rounded-lg md:w-20 md:h-10 shadow-xl mt-2"
                       onClick={() => btnHapus(data.id)}
                     >
                       Hapus

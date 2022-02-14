@@ -119,7 +119,6 @@ const EditSiswa = ({ data }) => {
         jumlahSaudara,
         anakke,
         namaAyah,
-        namaIbu,
         alamatOrangTua,
         pekerjaanAyah,
         tempatTanggalLahir,

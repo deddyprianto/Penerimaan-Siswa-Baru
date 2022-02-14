@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   showButtoMenu: { show: false },
   dataUserLogin: { data: {} },
+  data: { data: "" },
 };
 
 export const counterSlice = createSlice({
@@ -15,10 +16,13 @@ export const counterSlice = createSlice({
     actionDataUserLogin: (state, action) => {
       state.dataUserLogin = action.payload;
     },
+    actionData: (state, action) => {
+      state.data = action.payload;
+    },
   },
 });
 
-export const { actionshowMenuSlide, actionDataUserLogin } =
+export const { actionshowMenuSlide, actionDataUserLogin, actionData } =
   counterSlice.actions;
 
 export default counterSlice.reducer;
